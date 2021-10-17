@@ -1,0 +1,37 @@
+/* 5. */
+.form-float {
+  &.was-validated .form-control:valid:not(:placeholder-shown) ~ label,
+  &.was-validated .form-control:valid:focus:placeholder-shown ~ label,
+  .form-control.is-valid:valid:not(:placeholder-shown) ~ label,
+  .form-control.is-valid:valid:focus:placeholder-shown ~ label {
+    color: var(--bs-success);
+    border-width: 1.2px;
+  }
+
+  &.was-validated .form-control:invalid:not(:placeholder-shown) ~ label,
+  &.was-validated .form-control:invalid:focus:placeholder-shown ~ label,
+  .form-control.is-invalid:invalid:not(:placeholder-shown) ~ label,
+  .form-control.is-invalid:invalid:focus:placeholder-shown ~ label {
+    color: var(--bs-danger);
+  }
+
+  /* select */
+  &.was-validated .form-select:valid ~ label,
+  .form-select.is-valid:valid ~ label {
+    color: var(--bs-success);
+    /*#777;*/
+  }
+
+  .form-select:focus ~ label {
+    color: var(--bs-primary);
+  }
+
+  /*----------------------------------------------------------------
+  &.form-float-ul .form-control:invalid ~ .form-float-underline:before {
+    background: var(--bs-danger);
+  }
+  &.form-float-ul .form-control:valid ~ .form-float-underline:before {
+    background: var(--bs-success);
+  }
+  */
+}

@@ -1,0 +1,55 @@
+/* 4. */
+/* form-float-underline */
+.form-float {
+  &.form-float-ul {
+    /* form-float-underline Floating Label */
+    .form-control ~ label,
+    .form-select ~ label {
+      left: 0;
+      background: none;
+    }
+
+    .form-control,
+    .form-select {
+      border: none !important;
+      border-radius: 0;
+      border-bottom: 1px solid silver !important;
+    }
+    .form-control ~ .form-float-underline,
+    .form-select ~ .form-float-underline {
+      position: absolute;
+      height: 1.2px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+    .form-control:focus ~ .form-float-underline,
+    .form-select:focus ~ .form-float-underline {
+      height: 1.5px !important;
+    }
+    .form-control ~ .form-float-underline:before,
+    .form-select ~ .form-float-underline:before {
+      position: absolute;
+      left: 0;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: #4158d0;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    .form-control:not(:placeholder-shown):not(:focus)
+      ~ .form-float-underline:before,
+    .form-control:focus ~ .form-float-underline:before {
+      transform: scaleX(1);
+      background: var(--bs-purple);
+    }
+    /*.form-select:focus ~ .form-float-underline:before,*/
+    .form-select:valid ~ .form-float-underline:before {
+      transform: scaleX(1);
+      background: var(--bs-purple);
+    }
+  }
+}
+/* //4. ---------------------------------------------------*/

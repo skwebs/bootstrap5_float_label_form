@@ -1,0 +1,11 @@
+/* 6. */
+.form-control:required ~ label:after,
+.form-select:required ~ label:after {
+  content: "*";
+  position: relative;
+  color: var(--bs-danger);
+  transform: scale(1.2) translateX(0.2rem);
+  display: inline-block;
+  font-style: normal;
+}
+/* // 6. ---------------------------------------------------*/

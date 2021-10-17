@@ -1,0 +1,165 @@
+/* 1. ------------------------------------------------------------ */
+:root {
+  --small-font: 0.75rem;
+}
+
+/*===========================================
+Form Floating Label
+.form-float
+=============================================*/
+
+.form-group {
+  position: relative;
+}
+
+.form-float {
+  /* 2. ------------------------------------------------------------ */
+  .form-control,
+  .form-select {
+    border: 1px solid #ced4da;
+    z-index: 1;
+  }
+
+  .form-control ~ label,
+  .form-select ~ label {
+    position: absolute;
+    top: 0.7rem;
+    color: #777;
+    transition: 0.3s;
+    line-height: 1;
+  }
+  .form-control.form-control-sm ~ label,
+  .form-select.form-select-sm ~ label {
+    top: 0.45rem;
+  }
+  .form-control.form-control-lg ~ label,
+  .form-select.form-select-lg ~ label {
+    top: 1rem;
+  }
+  .form-control:focus ~ label,
+  .form-select:focus ~ label {
+    color: var(--bs-primary);
+  }
+
+  .form-control:focus ~ label,
+  .form-control:not(:placeholder-shown):not(:focus) ~ label,
+  .form-select:valid ~ label {
+    top: -0.5rem;
+    font-size: var(--small-font);
+    z-index: 1;
+    color: #000;
+  }
+  /* 3. ------------------------------------------------------------ */
+  &.form-float-box {
+    .form-control ~ label,
+    .form-select ~ label {
+      left: 0.5rem;
+      padding-left: 0.25rem;
+      padding-right: 0.5rem;
+      background: #fff;
+    }
+    .form-control-sm ~ label,
+    .form-select-sm ~ label {
+      left: 0.25rem;
+      padding-left: 0.25rem;
+      padding-right: 0.5rem;
+      background: #fff;
+    }
+    .form-control-lg ~ label,
+    .form-select-lg ~ label {
+      left: 0.75rem;
+      padding-left: 0.25rem;
+      padding-right: 0.5rem;
+      background: #fff;
+    }
+  }
+
+  /* 4. ------------------------------------------------------------ */
+  &.form-float-ul {
+    /* form-float-underline Floating Label */
+    .form-control ~ label,
+    .form-select ~ label {
+      left: 0;
+      background: none;
+    }
+
+    .form-control,
+    .form-select {
+      border: none !important;
+      border-radius: 0;
+      border-bottom: 1px solid silver !important;
+    }
+    .form-control ~ .form-float-underline,
+    .form-select ~ .form-float-underline {
+      position: absolute;
+      height: 1.2px;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+    }
+    .form-control:focus ~ .form-float-underline,
+    .form-select:focus ~ .form-float-underline {
+      height: 1.5px !important;
+    }
+    .form-control ~ .form-float-underline:before,
+    .form-select ~ .form-float-underline:before {
+      position: absolute;
+      left: 0;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: #4158d0;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+    .form-control:not(:placeholder-shown):not(:focus)
+      ~ .form-float-underline:before,
+    .form-control:focus ~ .form-float-underline:before {
+      transform: scaleX(1);
+      background: var(--bs-purple);
+    }
+    /*.form-select:focus ~ .form-float-underline:before,*/
+    .form-select:valid ~ .form-float-underline:before {
+      transform: scaleX(1);
+      background: var(--bs-purple);
+    }
+  }
+
+  /* 5. ------------------------------------------------------------ */
+  &.was-validated .form-control:valid:not(:placeholder-shown) ~ label,
+  &.was-validated .form-control:valid:focus:placeholder-shown ~ label,
+  .form-control.is-valid:valid:not(:placeholder-shown) ~ label,
+  .form-control.is-valid:valid:focus:placeholder-shown ~ label {
+    color: var(--bs-success);
+    border-width: 1.2px;
+  }
+
+  &.was-validated .form-control:invalid:not(:placeholder-shown) ~ label,
+  &.was-validated .form-control:invalid:focus:placeholder-shown ~ label,
+  .form-control.is-invalid:invalid:not(:placeholder-shown) ~ label,
+  .form-control.is-invalid:invalid:focus:placeholder-shown ~ label {
+    color: var(--bs-danger);
+  }
+
+  /* select */
+  &.was-validated .form-select:valid ~ label,
+  .form-select.is-valid:valid ~ label {
+    color: var(--bs-success);
+    /*#777;*/
+  }
+
+  .form-select:focus ~ label {
+    color: var(--bs-primary);
+  }
+
+  /*----------------------------------------------------------------
+  &.form-float-ul .form-control:invalid ~ .form-float-underline:before {
+    background: var(--bs-danger);
+  }
+  &.form-float-ul .form-control:valid ~ .form-float-underline:before {
+    background: var(--bs-success);
+  }
+  */
+  /* 6. ------------------------------------------------------------ */
+}

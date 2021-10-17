@@ -1,0 +1,12 @@
+// @import "./float_label/fl_1_form_group";
+// @import "./float_label/fl_2_form_float";
+// @import "./float_label/fl_3_form_float_box";
+// @import "./float_label/fl_4_form_float_ul";
+// @import "./float_label/fl_5_validation";
+// @import "./float_label/fl_6_required_mark";
+// @import "./float_label/fl_7_general";
+
+// single scss file for float label form
+@import "../node_modules/bootstrap/scss/bootstrap";
+/* custom float label form styling */
+@import "./float_label/all_float_label";

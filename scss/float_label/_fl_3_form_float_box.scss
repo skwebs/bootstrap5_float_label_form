@@ -1,0 +1,30 @@
+/* 3. */
+/*===========================================
+2 .form-float.form-float-box
+=============================================*/
+.form-float {
+  &.form-float-box {
+    .form-control ~ label,
+    .form-select ~ label {
+      left: 0.5rem;
+      padding-left: 0.25rem;
+      padding-right: 0.5rem;
+      background: #fff;
+    }
+    .form-control-sm ~ label,
+    .form-select-sm ~ label {
+      left: 0.25rem;
+      padding-left: 0.25rem;
+      padding-right: 0.5rem;
+      background: #fff;
+    }
+    .form-control-lg ~ label,
+    .form-select-lg ~ label {
+      left: 0.75rem;
+      padding-left: 0.25rem;
+      padding-right: 0.5rem;
+      background: #fff;
+    }
+  }
+}
+/* 

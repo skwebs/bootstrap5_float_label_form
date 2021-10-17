@@ -1,0 +1,39 @@
+/* 2. */
+.form-float {
+  .form-control,
+  .form-select {
+    border: 1px solid #ced4da;
+    z-index: 1;
+  }
+
+  .form-control ~ label,
+  .form-select ~ label {
+    position: absolute;
+    top: 0.7rem;
+    color: #777;
+    transition: 0.3s;
+    line-height: 1;
+  }
+  .form-control.form-control-sm ~ label,
+  .form-select.form-select-sm ~ label {
+    top: 0.45rem;
+  }
+  .form-control.form-control-lg ~ label,
+  .form-select.form-select-lg ~ label {
+    top: 1rem;
+  }
+  .form-control:focus ~ label,
+  .form-select:focus ~ label {
+    color: var(--bs-primary);
+  }
+
+  .form-control:focus ~ label,
+  .form-control:not(:placeholder-shown):not(:focus) ~ label,
+  .form-select:valid ~ label {
+    top: -0.5rem;
+    font-size: var(--small-font);
+    z-index: 1;
+    color: #000;
+  }
+}
+/*  //2---------------------------------------------------- */
